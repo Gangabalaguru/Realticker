@@ -8,13 +8,14 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${import.meta.env.BACKEND_URL}/top10`)
-      .then(res => {
-        setStocks(res.data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
+  axios.get(`${import.meta.env.VITE_BACKEND_URL}/top10`)
+    .then(res => {
+
+      setStocks(res.data); // temporary
+      setLoading(false);
+    })
+    .catch(() => setLoading(false));
+}, []);
 
   if (loading) return <p className="p-6 text-center">Loading...</p>;
 
