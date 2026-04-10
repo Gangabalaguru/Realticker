@@ -8,7 +8,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8081/api/stocks/top10")
+    axios.get(`${import.meta.env.BACKEND_URL}/top10`)
       .then(res => {
         setStocks(res.data);
         setLoading(false);

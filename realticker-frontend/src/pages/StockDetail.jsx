@@ -15,8 +15,8 @@ export default function StockDetail() {
 
     // ✅ Call both APIs once
     Promise.all([
-      axios.post(`http://localhost:8081/api/stocks/${ticker}/analyze`),
-      axios.get(`http://localhost:8081/api/stocks/${ticker}/history`)
+      axios.post(`${import.meta.env.BACKEND_URL}/${ticker}/analyze`),
+      axios.get(`${import.meta.env.BACKEND_URL}/${ticker}/history`)
     ])
       .then(([analysisRes, historyRes]) => {
         setAnalysis(analysisRes.data);
