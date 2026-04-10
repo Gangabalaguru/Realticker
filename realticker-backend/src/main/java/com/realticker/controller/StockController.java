@@ -13,9 +13,10 @@ import com.realticker.dto.AnalysisResponse;
 import com.realticker.model.Stock;
 import com.realticker.service.StockService;
 
+
 @RestController
 @RequestMapping("/api/stocks")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class StockController {
 
     private final StockService service;
